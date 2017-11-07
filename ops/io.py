@@ -38,6 +38,8 @@ def process_proposal_list(norm_proposal_list, out_list_name, frame_dict):
     processed_proposal_list = []
     for idx, prop in enumerate(norm_proposals):
         vid = prop[0]
+        if vid not in frame_dict:
+            continue
         frame_info = frame_dict[vid]
         frame_cnt = frame_info[1]
         frame_path = frame_info[0]
